@@ -3,229 +3,240 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>黃宥勛｜Java 後端工程師履歷</title>
+  <title>黃宥勛 — 履歷（Java / 後端工程師）</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: linear-gradient(135deg, #e9efff, #f9fbff);
-      --primary: #1f4fff;
-      --text-dark: #222;
-      --text-muted: #666;
-      --card-bg: #fff;
-      --radius: 16px;
-      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+    :root{
+      --bg: linear-gradient(180deg,#f5f8ff,#fafcff);
+      --card:#ffffff;
+      --accent:#1f4fff;
+      --muted:#a3a0a0;
+      --radius:14px;
+      --maxw:980px;
     }
-    * {box-sizing: border-box; margin:0; padding:0;}
-    body {
-      font-family: "Noto Sans TC", sans-serif;
-      background: var(--bg);
-      color: var(--text-dark);
-      line-height: 1.7;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      padding:32px;
+      font-family:"Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#111;
+      display:flex;
+      justify-content:center;
     }
-    .container {
-      max-width: 960px;
-      width: 100%;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      animation: fadeIn 0.8s ease-in;
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 12px 40px rgba(16,24,40,0.08);
+      overflow:hidden;
+      animation:enter .6s ease;
     }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+    @keyframes enter{from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none}}
+    header{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      padding:34px;
+      background:linear-gradient(90deg,var(--accent),#6d83ff);
+      color:#fff;
+      flex-wrap:wrap;
     }
-    header {
-      background: linear-gradient(135deg, #1f4fff, #5f7bff);
-      color: white;
-      padding: 40px 50px;
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
+    .photo{
+      width:116px; height:116px; border-radius:50%;
+      background:linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.08));
+      display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px;
       border: 3px solid rgba(255,255,255,0.8);
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      background-color: #fff;
+      overflow:hidden;
     }
-    .info h1 {font-size: 26px; font-weight: 700;}
-    .info p {font-size: 15px; opacity: 0.9; margin-top: 6px;}
-    .download-btn {
-      margin-left: auto;
-      background: white;
-      color: var(--primary);
-      padding: 8px 14px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: 0.3s;
+    .photo img{width:100%; height:100%; object-fit:cover; display:block}
+    .title h1{margin:0; font-size:22px}
+    .title p{margin:6px 0 0 0; opacity:0.95}
+    .top-actions{margin-left:auto; display:flex; gap:10px; align-items:center}
+    .btn{
+      background:#fff; color:var(--accent); padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:600;
+      box-shadow:0 4px 12px rgba(31,79,255,0.12);
     }
-    .download-btn:hover {background: rgba(255,255,255,0.9);}
-    main {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 24px;
-      padding: 40px 50px;
+    main{display:grid; grid-template-columns: 2fr 1fr; gap:28px; padding:34px}
+    .section{background:linear-gradient(180deg,#fff,#fbfdff); padding:18px; border-radius:10px; margin-bottom:16px}
+    h2{font-size:16px; color:var(--accent); margin:0 0 8px 0; padding-left:8px; border-left:4px solid rgba(31,79,255,0.12)}
+    p, li{font-size:14px; color:#111; line-height:1.6}
+    .muted{color:var(--muted); font-size:13px}
+    /* Skills tags */
+    .skills{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{background:#f1f4ff; color:var(--accent); padding:6px 10px; border-radius:999px; font-weight:600; font-size:13px}
+    /* Experience */
+    .job{margin-bottom:12px}
+    .job h3{margin:0; font-size:15px}
+    .job .meta{font-size:13px; color:var(--muted); margin:6px 0}
+    .job ul{margin:6px 0 0 18px}
+    /* Right column */
+    aside .section{position:sticky; top:28px}
+    footer{padding:18px 34px; text-align:center; border-top:1px solid #f0f3ff; color:var(--muted); font-size:13px}
+    a.link{color:var(--accent); text-decoration:none; font-weight:600}
+    /* print-friendly */
+    @media print{
+      body{padding:0; background:white}
+      .wrap{box-shadow:none; border-radius:0}
+      header{background:none; color:black}
+      .btn{display:none}
     }
-    section {
-      margin-bottom: 26px;
-    }
-    h2 {
-      font-size: 18px;
-      color: var(--primary);
-      margin-bottom: 10px;
-      border-left: 4px solid var(--primary);
-      padding-left: 10px;
-      font-weight: 700;
-    }
-    p, li {
-      font-size: 15px;
-      color: var(--text-dark);
-    }
-    .tag {
-      display: inline-block;
-      background: #f1f4ff;
-      color: var(--primary);
-      border-radius: 999px;
-      padding: 6px 12px;
-      margin: 4px 6px 0 0;
-      font-size: 13px;
-      font-weight: 500;
-    }
-    .exp {
-      margin-bottom: 16px;
-    }
-    .exp h3 {
-      font-size: 16px;
-      margin-bottom: 4px;
-    }
-    .meta {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-    ul {
-      margin-left: 18px;
-      margin-top: 4px;
-    }
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-      padding: 24px 0;
-      border-top: 1px solid #eee;
-      background: #fafbff;
-    }
-    @media (max-width: 820px) {
-      main {grid-template-columns: 1fr;}
-      header {justify-content: center; text-align: center;}
-      .download-btn {margin: 10px auto 0;}
+    /* responsive */
+    @media (max-width:880px){
+      main{grid-template-columns:1fr}
+      .top-actions{width:100%; justify-content:center}
+      header{padding:22px}
+      .photo{width:96px; height:96px}
+      aside .section{position:static}
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap" role="main">
     <header>
-      <img src="1.jpg" alt="你的照片 (請替換為真實檔案)" />
-      <div class="info">
-        <h1>黃宥勛</h1>
-        <p>Java / Spring Boot 後端工程師｜具備 1–2 年經驗｜對 AI / ML 開發有熱情</p>
+      <div class="photo" aria-hidden="true">
+        <img src="1.jpg" alt="黃宥勛">
       </div>
-      <!-- <a href="resume.pdf" class="download-btn" download>⬇ 下載 PDF</a> -->
+
+      <div class="title">
+        <h1>黃宥勛（Youshiun Huang）</h1>
+        <p>Java / Spring Boot 後端工程師｜對 AI/ML 應用有熱忱</p>
+        <p class="muted">專長：RESTful API、資料庫設計、系統整合、CI/CD、自動化測試</p>
+      </div>
+
+      <div class="top-actions">
+        <!-- <a class="btn" href="resume.pdf" download>⬇ 下載 PDF</a> -->
+        <!-- <a class="btn" href="https://github.com/jtkidding" target="_blank" rel="noopener">GitHub</a> -->
+      </div>
     </header>
 
     <main>
+      <!-- 左欄：主體（Summary / Experience / Projects / Education） -->
       <div>
-        <section>
-          <h2>個人簡介</h2>
-          <p>主要使用 Java、Spring Boot 進行後端 API 開發與第三方串接，熟悉 MVC 架構、資料庫操作與版本控制（Git）。對 AI/ML 應用有興趣，具備 TensorFlow 基礎。</p>
+        <section class="section" aria-labelledby="summary">
+          <h2 id="summary">個人簡介（Summary）</h2>
+          <p>
+            熱衷於後端系統開發的工程師，主力語言為 <strong>Java</strong>，擅長使用 <strong>Spring Boot</strong> 建構穩定的 RESTful API、處理資料庫設計與效能優化。
+            具備跨團隊溝通經驗，熟悉 Git 與 CI/CD 流程，並持續學習 AI/ML（TensorFlow）應用，期望進一步結合後端服務與機器學習工程。
+          </p>
         </section>
 
-        <section>
-          <h2>工作經歷</h2>
-          <div class="exp">
-            <h3>Java 工程師 — 運籌網通股份有限公司</h3>
-            <div class="meta">2024/08 ～ 至今｜桃園</div>
-            <p>負責後端 API 開發、功能維護與效能優化。</p>
-            <p>熟悉 Oracle 與 Spring Framework。</p>
-          </div>
+        <section class="section" aria-labelledby="experience">
+          <h2 id="experience">工作經歷（Experience）</h2>
 
-          <div class="exp">
-            <h3>研發工程師 — 隆順</h3>
-            <div class="meta">2024/05 ～ 2024/07（短期專案）</div>
-            <p>使用 C# 與 MySQL 實作簡易資料管理系統。</p>
-          </div>
-        </section>
-
-        <section>
-          <h2>專案經驗</h2>
-          <div class="exp">
-            <h3>Sting 購物網站（大學專題）</h3>
-            <div class="meta">2019/12 ～ 2020/05</div>
+          <article class="job">
+            <h3>Java 後端工程師 — 運籌網通股份有限公司</h3>
+            <div class="meta">2024/08 ～ 至今 ｜ 桃園</div>
             <ul>
-              <li>以 React.js + Node.js 開發完整購物系統。</li>
-              <li>MySQL 管理商品與訂單，支援登入、購物車功能。</li>
-              <li>部署於 Heroku 平台。</li>
+              <!-- <li>負責 Spring Boot 後端服務與 REST API 設計，維護核心交易流程與資料一致性。</li> -->
+              <li>維運內部管理系統，處理 API 錯誤追蹤與例外情境處理，提升系統穩定度。</li>
+              <li>整合 Python 程式模組，設計跨語言的資料交換格式（JSON），縮短資料同步流程的開發時間。</li>
+              <li>參與 code review 與單元測試（JUnit）流程，提升程式碼可維護性。</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <h3>研發工程師（短期） — 隆順</h3>
+            <div class="meta">2024/05 ～ 2024/07（3 個月）</div>
+            <ul>
+              <li>使用 C# 與 MySQL 製作資料管理系統。</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section" aria-labelledby="projects">
+          <h2 id="projects">專案經驗（Projects）</h2>
+
+          <div class="job">
+            <h3>Sting 購物網站（大學專題）</h3>
+            <div class="meta">2019/12 ～ 2020/05 ｜ React + Node.js + MySQL</div>
+            <ul>
+              <li>負責後端（Node.js + Express）與資料庫設計（MySQL），實作會員管理、購物車與訂單流程。</li>
+              <li>完成前後端分離架構；部署於 Heroku，並實作基本驗證與錯誤處理。</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>影像辨識（碩士論文）</h3>
+            <div class="meta">2023 ｜ TensorFlow / Python</div>
+            <ul>
+              <li>使用 MobileNetV2 & U-Net 模型，透過聯邦學習算法進行辨識癌細胞切片的訓練與驗證。</li>
             </ul>
           </div>
         </section>
 
-        <section>
-          <h2>學歷</h2>
-          <p><strong>國立台北科技大學</strong><br>碩士（資訊工程系）｜2021/09 ～ 2023/08</p>
+        <section class="section" aria-labelledby="education">
+          <h2 id="education">學歷（Education）</h2>
+          <p><strong>國立台北科技大學</strong><br>資訊工程系 碩士｜2021/09 ～ 2023/06</p>
         </section>
       </div>
 
-      <div>
-        <section>
-          <h2>聯絡資訊</h2>
+      <!-- 右欄：技能 / 聯絡 / 求職意向 / 語言 -->
+      <aside>
+        <section class="section" aria-labelledby="contact">
+          <h2 id="contact">聯絡資訊</h2>
           <p>📞 0965-101-598</p>
-          <p>✉️ <a href="mailto:z59141483@gmail.com">z59141483@gmail.com</a></p>
+          <p>✉️ <a class="link" href="mailto:z59141483@gmail.com">z59141483@gmail.com</a></p>
           <p>📍 桃園</p>
-          <p>🚗 持重型機車駕照</p>
+          <p class="muted">駕照：重型機車</p>
         </section>
 
-        <section>
-          <h2>技能</h2>
-          <div>
+        <section class="section" aria-labelledby="skills">
+          <h2 id="skills">技能（Skills）</h2>
+
+          <div style="margin-bottom:5px"><strong>程式語言</strong></div>
+          <div class="skills" aria-hidden="true">
             <span class="tag">Java</span>
-            <span class="tag">Spring / Spring Boot</span>
             <span class="tag">Python</span>
             <span class="tag">C#</span>
             <span class="tag">JavaScript</span>
+          </div>
+
+          <div style="margin-top:10px;margin-bottom:5px"><strong>框架 / 技術</strong></div>
+          <div class="skills">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Spring MVC</span>
+            <span class="tag">RESTful API</span>
+            <span class="tag">MyBatis / JPA</span>
+          </div>
+
+          <div style="margin-top:10px;margin-bottom:5px"><strong>資料庫</strong></div>
+          <div class="skills">
             <span class="tag">Oracle</span>
             <span class="tag">MySQL</span>
-            <span class="tag">Git / SVN</span>
-            <span class="tag">Linux</span>
+          </div>
+
+          <div style="margin-top:10px;margin-bottom:5px"><strong>工具 / 部署</strong></div>
+          <div class="skills">
+            <span class="tag">Git</span>
             <span class="tag">Docker</span>
-            <span class="tag">TensorFlow</span>
+            <span class="tag">Linux</span>
+            <span class="tag">CI/CD</span>
+          </div>
+
+          <div style="margin-top:10px;margin-bottom:5px"><strong>AI / ML</strong></div>
+          <div class="skills">
+            <span class="tag">TensorFlow (基礎)</span>
+            <span class="tag">NumPy / Pandas</span>
           </div>
         </section>
 
-        <section>
-          <h2>求職意向</h2>
-          <p>尋找 Java 後端或 AI/ML 工程師職務。</p>
+        <section class="section" aria-labelledby="target">
+          <h2 id="target">求職意向</h2>
+          <p>希望擔任：後端工程師 或 AI/ML 工程師。</p>
         </section>
 
-        <section>
-          <h2>語言能力</h2>
+        <section class="section" aria-labelledby="lang">
+          <h2 id="lang">語言</h2>
           <p>中文（母語）</p>
-          <p>英文（良好，能閱讀技術文件）</p>
+          <p>英文（可閱讀技術文件、撰寫註解）</p>
         </section>
-      </div>
+      </aside>
     </main>
 
     <footer>
-      © 2025 YouShiun Huang
+      © 2025 黃宥勛
     </footer>
   </div>
 </body>
