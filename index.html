@@ -82,6 +82,41 @@
       header{background:none; color:black}
       .btn{display:none}
     }
+
+    @media print {
+      /* 強制使用單欄，避免 Grid 被打爛 */
+      main {
+        display: block !important;
+      }
+
+      aside {
+        display: block !important;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+
+      body {
+        background: white !important;
+        padding: 0 !important;
+      }
+
+      .wrap {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+
+      header {
+        background: none !important;
+        color: black !important;
+      }
+
+      .btn {
+        display: none !important;
+      }
+    }
+
     /* responsive */
     @media (max-width:880px){
       main{grid-template-columns:1fr}
